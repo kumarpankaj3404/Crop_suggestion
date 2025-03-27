@@ -1,0 +1,67 @@
+.gradient-button {
+    position: relative;
+    background: none;
+    border: none;
+    transition: transform 0.2s ease;
+}
+
+.gradient-button::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #4ade80, #3b82f6, #a855f7);
+    background-size: 200% 200%;
+    border-radius: 1rem;
+    z-index: -1;
+    animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-button:active {
+    transform: scale(0.95);
+}
+
+@keyframes phone-ring {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+    100% { transform: translateX(0); }
+}
+
+.phone-button {
+    display: inline-block; /* Required for transforms */
+    transition: transform 0.1s ease-in-out;
+}
+
+.phone-button:hover {
+    animation: phone-ring 0.15s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Rotate arrow when expanded */
+.rotate-180 {
+    transform: rotate(25deg);
+}
+
+/* Smooth rotation transition */
+img {
+    transition: transform 0.3s ease;
+}
