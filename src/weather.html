@@ -109,6 +109,18 @@
             padding: 20px;
             margin: 20px;
         }
+        
+        /* Weather symbol hover effects */
+        .flex.justify-center.items-center.mb-10.gap-7 i {
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        .flex.justify-center.items-center.mb-10.gap-7 i:hover {
+            color: #ffd700; /* Gold color on hover */
+            transform: scale(1.2) rotate(10deg);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="font-mono bg-gray-950 text-white relative text-center items-center">
@@ -142,8 +154,8 @@
             </div>
             
             <div id="initialMessage" class="text-center mb-10 visible-content mx-auto">
-                <div class="flex justify-center items-center mb-10 gap-7">
-                    <i class="fa-solid fa-cloud text-lime-500 fa-3x"></i>
+                <div class="flex justify-center items-center mb-10 gap-7 ">
+                    <i class="fa-solid fa-cloud text-lime-500 fa-3x "></i>
                     <i class="fa-solid fa-smog text-lime-500 fa-3x"></i>
                     <i class="fa-solid fa-cloud-sun text-lime-500 fa-3x"></i>
                     <i class="fa-solid fa-cloud-moon-rain text-lime-500 fa-3x"></i>
@@ -209,7 +221,7 @@
                 </div>
             </div>
             
-            <a href="./homePage.html" class="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-6 rounded-2xl inline-block mt-8 mb-2 shadow-lg transition duration-300 ease-in-out text-lg transform hover:scale-105">
+            <a href="./homePage.html" class="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-6 rounded-2xl inline-block mt-8 mb-2 shadow-lg transition-all duration-300 ease-in-out text-lg hover:scale-105 active:scale-95">
                 Back to Home
             </a>
         </div>
@@ -223,7 +235,7 @@
 
     <script src="./crop-data.js"></script>
     <script>
-        const WEATHER_API_KEY = 'eaa91f7824db8a1d18b0130a7816da89'; // Working API key
+        const WEATHER_API_KEY = '003f656acbdd9fd7222efa58911418ef'; // Working API key
         
         document.addEventListener('DOMContentLoaded', function() {
             const searchButton = document.getElementById('searchButton');
