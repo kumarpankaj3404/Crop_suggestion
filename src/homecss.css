@@ -5,6 +5,7 @@
     transition: transform 0.2s ease;
 }
 
+
 .gradient-button::before {
     content: '';
     position: absolute;
@@ -64,4 +65,46 @@
 /* Smooth rotation transition */
 img {
     transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.accordion-content.active {
+    max-height: 500px; /* Adjust based on your content needs */
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.accordion-item {
+    transition: background-color 0.2s ease;
+}
+
+.accordion-item:hover {
+    background-color: #374151; /* bg-gray-700 */
+}
+
+#accordion-container::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(31, 41, 55, 0.1);
+}
+
+#accordion-container::-webkit-scrollbar-track {
+    background: rgba(17, 24, 39, 0.2);
+    border-radius: 4px;
+}
+
+#accordion-container::-webkit-scrollbar-thumb {
+    background: rgba(132, 204, 22, 0.8); /* lime-500 with opacity */
+    border-radius: 4px;
+    border: 2px solid rgba(31, 41, 55, 0.2);
+}
+
+#accordion-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(163, 230, 53, 0.9); /* lime-400 */
 }

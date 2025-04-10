@@ -68,7 +68,9 @@ Together, let’s grow more with less and build a greener tomorrow.
         <div class="flex flex-col items-center mt-25">
 
             <h1 class="text-3xl ">Our Services</h1>
-            <p class="w-150">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil animi accusantium dolorem aperiam natus eum, consectetur at in quam repellat.</p>
+            <p class="w-150">
+                Discover our range of innovative services designed to empower farmers and promote sustainable agriculture. From personalized crop recommendations to advanced weather predictions and pest management solutions, we provide tools to help you grow smarter and more efficiently.
+            </p>
 
             <div class="flex gap-7 mt-10">
                 <a href="./crop_recommendation.html" class="block">
@@ -100,7 +102,7 @@ Together, let’s grow more with less and build a greener tomorrow.
                         Pest and Disease
                     </h3>
                     <p class="m-3 text-lg ">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                        Explore effective pest and disease management strategies to protect your crops.
                     </p>
                 </div>
                 </a>
@@ -119,59 +121,94 @@ Together, let’s grow more with less and build a greener tomorrow.
 
 
     <div class="flex flex-col items-center mt-25" id="About">
-        <h1 class="text-3xl font-bold">
-            Our methods
+        <h1 class="text-3xl font-bold mb-4">
+            Our Farming Methodology
         </h1>
-        <p class="w-150 text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, autem sequi aliquam tenetur quis accusamus delectus expedita reprehenderit harum quo!
+        <p class="w-150 text-center mb-8">
+            Innovative agricultural practices combining technology and sustainability
         </p>
-        <div class=" mt-5 flex gap-15">
-            
-            <img src="../photos/home/tractor-spray.jpg" alt="tractor-spray" class="h-95 w-120 rounded-xl ">
-
-            <div class=" h-95 flex flex-col justify-center ">
-
-                <div class="accordion-item flex flex-col gap-3 pl-5 pr-5 pt-3 pb-3 border-2 border-gray-800 rounded-2xl bg-gray-700 w-100">
-                    <div class="flex justify-between items-center">
-                        <h1 class="text-xl font-bold">Assessment and Planning</h1>
-                        <button class="hover:cursor-pointer">
-                            <img src="../photos/home/down.svg" alt="" class="h-5 w-6 transition-transform">
-                        </button>
+        <div class="relative flex gap-8 items-start">
+            <img src="../photos/home/tractor-spray.jpg" alt="farming-methods" 
+                 class="h-110 w-150 rounded-xl object-cover sticky top-4">
+    
+            <div class="flex flex-col justify-between gap-2 h-110 overflow-y-auto w-120 pr-2 hover:pr-0 transition-all duration-300" 
+     id="accordion-container">
+                <!-- Precision Agriculture -->
+                <div class="accordion-item border-2 border-gray-800 rounded-xl bg-gray-700">
+                    <div class="accordion-header flex justify-between items-center p-4 cursor-pointer">
+                        <h3 class="text-lg font-semibold">Precision Agriculture</h3>
+                        <img src="../photos/home/down.svg" class="h-5 w-5 transition-transform accordion-arrow">
                     </div>
-                    <p class="hidden pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus odit accusamus possimus aperiam. Magni minima alias tenetur quasi optio nam repudiandae quos, sapiente repellendus quae?</p>
-                </div>
-
-                <div class="accordion-item flex flex-col gap-3 pl-5 pr-5 pt-3 pb-3 border-2 border-gray-800 rounded-2xl bg-gray-700 w-100">
-                    <div class="flex justify-between items-center">
-                        <h1 class="text-xl font-bold">Assessment and Planning</h1>
-                        <button class="hover:cursor-pointer">
-                            <img src="../photos/home/down.svg" alt="" class="h-5 w-6 transition-transform">
-                        </button>
+                    <div class="accordion-content px-4 pb-4 space-y-3">
+                        <ul class="list-disc pl-6 text-gray-300 space-y-2">
+                            <li>Real-time soil moisture monitoring</li>
+                            <li>Crop health imaging (NDVI analysis)</li>
+                            <li>Variable-rate fertilizer application</li>
+                            <li>Automated yield mapping</li>
+                        </ul>
                     </div>
-                    <p class="hidden pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
                 </div>
-
-                <div class="accordion-item flex flex-col gap-3 pl-5 pr-5 pt-3 pb-3 border-2 border-gray-800 rounded-2xl bg-gray-700 w-100">
-                    <div class="flex justify-between items-center">
-                        <h1 class="text-xl font-bold">Assessment and Planning</h1>
-                        <button class="hover:cursor-pointer">
-                            <img src="../photos/home/down.svg" alt="" class="h-5 w-6 transition-transform">
-                        </button>
+    
+                <!-- Soil Health Optimization -->
+                <div class="accordion-item border-2 border-gray-800 rounded-xl bg-gray-700">
+                    <div class="accordion-header flex justify-between items-center p-4 cursor-pointer">
+                        <h3 class="text-lg font-semibold">Soil Health Optimization</h3>
+                        <img src="../photos/home/down.svg" class="h-5 w-5 transition-transform accordion-arrow">
                     </div>
-                    <p class="hidden pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-                </div>
-
-                <div class="accordion-item flex flex-col gap-3 pl-5 pr-5 pt-3 pb-3 border-2 border-gray-800 rounded-2xl bg-gray-700 w-100">
-                    <div class="flex justify-between items-center">
-                        <h1 class="text-xl font-bold">Assessment and Planning</h1>
-                        <button class="hover:cursor-pointer">
-                            <img src="../photos/home/down.svg" alt="" class="h-5 w-6 transition-transform">
-                        </button>
+                    <div class="accordion-content px-4 pb-4 space-y-3">
+                        <div class="grid grid-cols-2 gap-3 text-gray-300">
+                            <div class="bg-gray-800 p-3 rounded-lg">
+                                <h4 class="text-lime-300 text-sm font-semibold">Cover Cropping</h4>
+                                <p class="text-xs mt-1">Legume rotations adding 50kg N/ha</p>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg">
+                                <h4 class="text-lime-300 text-sm font-semibold">Biochar Amendment</h4>
+                                <p class="text-xs mt-1">20% increase in water retention</p>
+                            </div>
+                        </div>
                     </div>
-                    <p class="hidden pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
                 </div>
-                
-
+    
+                <!-- Smart Irrigation -->
+                <div class="accordion-item border-2 border-gray-800 rounded-xl bg-gray-700">
+                    <div class="accordion-header flex justify-between items-center p-4 cursor-pointer">
+                        <h3 class="text-lg font-semibold">Smart Irrigation</h3>
+                        <img src="../photos/home/down.svg" class="h-5 w-5 transition-transform accordion-arrow">
+                    </div>
+                    <div class="accordion-content px-4 pb-4 space-y-3">
+                        <ul class="list-disc pl-6 text-gray-300 space-y-2">
+                            <li>Soil tension monitoring</li>
+                            <li>Evapotranspiration calculations</li>
+                            <li>Drip irrigation automation</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- Eco-Pest Management -->
+                <div class="accordion-item border-2 border-gray-800 rounded-xl bg-gray-700">
+                    <div class="accordion-header flex justify-between items-center p-4 cursor-pointer">
+                        <h3 class="text-lg font-semibold">Eco-Pest Management</h3>
+                        <img src="../photos/home/down.svg" class="h-5 w-5 transition-transform accordion-arrow">
+                    </div>
+                    <div class="accordion-content px-4 pb-4 space-y-3">
+                        <div class="grid grid-cols-2 gap-3 text-gray-300">
+                            <div class="bg-gray-800 p-3 rounded-lg">
+                                <h4 class="text-lime-300 text-sm font-semibold">Biological Controls</h4>
+                                <ul class="text-xs list-disc pl-4 mt-1 space-y-1">
+                                    <li>Ladybugs for aphids</li>
+                                    <li>Nematodes for grubs</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg">
+                                <h4 class="text-lime-300 text-sm font-semibold">Monitoring</h4>
+                                <ul class="text-xs list-disc pl-4 mt-1 space-y-1">
+                                    <li>AI pest recognition</li>
+                                    <li>Smart trap networks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -189,7 +226,7 @@ Together, let’s grow more with less and build a greener tomorrow.
     <div class="partner bg-gray-900 pl-20 pr-20 ml-5 mr-5 rounded-2xl pt-5 pb-5 mt-25">
         <div>
             <h1>Benifits to be partnered with us</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, autem sequi aliquam tenetur quis accusamus<br> delectus expedita reprehenderit harum quo!</p>
+            <p>Partner with us to access advanced agricultural technologies, expert support, and a community dedicated to sustainable farming.</p>
             <div class="partner_img flex justify-between gap-5 mt-10">
                 <img src="../photos/home/farm_tech.svg" alt="tech" class="h-25 w-30 rounded-2xl">
                 <img src="../photos/home/support.svg" alt="partner2" class="h-25 w-30 rounded-2xl">
@@ -216,7 +253,7 @@ Together, let’s grow more with less and build a greener tomorrow.
                 <img src="../photos/home/logo.png" alt="logo" class="h-10 w-10 rounded-4xl">
                 <h1>AgriGrow</h1>
             </span>
-            <p class="mt-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, autem sequi aliquam tenetur quis accusamus delectus expedita reprehenderit harum quo!</p>
+            <p class="mt-6">Join AgriGrow to revolutionize your farming practices and contribute to a greener, more sustainable future.</p>
         </div>
 
         <div class="Quick_link  flex flex-col" >
@@ -259,19 +296,35 @@ Together, let’s grow more with less and build a greener tomorrow.
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll('.accordion-item button').forEach(button => {
-                button.addEventListener('click', () => {
-                    // Traverse up to parent accordion-item first
-                    const accordionItem = button.closest('.accordion-item');
-                    const paragraph = accordionItem.querySelector('p');
-                    const arrowImg = button.querySelector('img');
-                    
-                    paragraph.classList.toggle('hidden');
-                    arrowImg.classList.toggle('rotate-180');
+        document.addEventListener('DOMContentLoaded', () => {
+        const accordionItems = document.querySelectorAll('.accordion-item');
+    
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.flex.justify-between');
+            const content = item.querySelector('.accordion-content');
+            const arrow = item.querySelector('img');
+    
+            header.addEventListener('click', () => {
+                // Close all other items
+                accordionItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                        otherItem.querySelector('img').classList.remove('rotate-180');
+                    }
                 });
+    
+                // Toggle current item
+                content.style.maxHeight = content.style.maxHeight ? null : `${content.scrollHeight}px`;
+                arrow.classList.toggle('rotate-180');
+                
+                // Smooth scroll
+                if (content.style.maxHeight) {
+                    item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
             });
         });
-    </script>
+    });
+        </script>
+        
 </body>
 </html>
