@@ -5,7 +5,6 @@
     transition: transform 0.2s ease;
 }
 
-
 .gradient-button::before {
     content: '';
     position: absolute;
@@ -21,15 +20,9 @@
 }
 
 @keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .gradient-button:active {
@@ -44,7 +37,7 @@
 }
 
 .phone-button {
-    display: inline-block; /* Required for transforms */
+    display: inline-block;
     transition: transform 0.1s ease-in-out;
 }
 
@@ -53,19 +46,10 @@
     cursor: pointer;
 }
 
-.hidden {
-    display: none;
-}
-
-/* Rotate arrow when expanded */
-.rotate-180 {
-    transform: rotate(25deg);
-}
-
-/* Smooth rotation transition */
-img {
-    transition: transform 0.3s ease;
-}
+/* Accordion styles */
+.hidden { display: none; }
+.rotate-180 { transform: rotate(180deg); }
+img { transition: transform 0.3s ease; }
 
 .accordion-content {
     transition: all 0.3s ease;
@@ -74,11 +58,7 @@ img {
 }
 
 .accordion-content.active {
-    max-height: 500px; /* Adjust based on your content needs */
-}
-
-.rotate-180 {
-    transform: rotate(180deg);
+    max-height: 500px;
 }
 
 .accordion-item {
@@ -86,9 +66,10 @@ img {
 }
 
 .accordion-item:hover {
-    background-color: #374151; /* bg-gray-700 */
+    background-color: #374151;
 }
 
+/* Scrollbar styles */
 #accordion-container::-webkit-scrollbar {
     width: 8px;
     background-color: rgba(31, 41, 55, 0.1);
@@ -100,11 +81,36 @@ img {
 }
 
 #accordion-container::-webkit-scrollbar-thumb {
-    background: rgba(132, 204, 22, 0.8); /* lime-500 with opacity */
+    background: rgba(132, 204, 22, 0.8);
     border-radius: 4px;
     border: 2px solid rgba(31, 41, 55, 0.2);
 }
 
 #accordion-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(163, 230, 53, 0.9); /* lime-400 */
+    background: rgba(163, 230, 53, 0.9);
 }
+
+/* Sidebar styles */
+.sidebar {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.overlay {
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease-in-out;
+}
+.rotate-image {
+    width: 150px;
+    height: 150px;
+    transition: transform 10s linear;
+  }
+  
+  .rotate-image:hover {
+    transform: rotate(360deg);
+  }
+  
