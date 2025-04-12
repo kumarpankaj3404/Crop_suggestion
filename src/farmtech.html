@@ -1,64 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farm Tech - AgriGrow</title>
-    <link href="./output.css" rel="stylesheet">
-    <link rel="stylesheet" href="./homecss.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farm Tech - AgriGrow</title>
+  <link href="./output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./homecss.css" />
+
+  <style>
+    .slide-info {
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      transform: translateX(100%);
+      opacity: 0;
+      position: absolute;
+      top: 14rem;
+      right: 2rem;
+      width: 90%;
+      max-width: 420px;
+      z-index: 10;
+    }
+
+    .slide-info.show {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  </style>
+
+  <script>
+    function toggleTechInfo() {
+      const info = document.getElementById("techInfo");
+      info.classList.toggle("show");
+    }
+  </script>
 </head>
-<body class="font-mono bg-gray-950 text-white">
+<body class="font-mono bg-gray-950 text-white flex flex-col min-h-screen">
 
-    <!--header from  homepage -->
-    <header class="flex justify-between items-center bg-gray-950 h-15 sticky top-0 z-2 px-5">
-        <div class="flex gap-2  items-center">
-            <a href="./homePage.html" class="flex items-center gap-2">
-                <img src="../photos/home/logo.png" alt="logo" class="h-10 w-10 rounded-4xl">
-                <h3 class="">AgriGrow</h3>
-            </a>
-        </div>
+  <!-- Main wrapper to stretch content -->
+  <div class="flex-grow">
 
-        <div class="text-gray-400 flex items-center gap-5 border-2 border-gray-800 rounded-2xl px-4 py-1">
-            <a href="./index.html" class="hover:text-white">Home</a>
-            <a href="#" class="hover:text-white">Services</a>
-            <a href="#" class="hover:text-white">Blog</a>
-            <a href="#" class="hover:text-white">About us</a>
-        </div>
+    <!-- Header -->
+    <header class="flex justify-between items-center bg-gray-950 h-15 sticky top-0 z-20 px-5">
+      <div class="flex gap-2 items-center">
+        <a href="./homePage.html" class="flex items-center gap-2">
+          <img src="../photos/home/logo.png" alt="logo" class="h-10 w-10 rounded-4xl">
+          <h3>AgriGrow</h3>
+        </a>
+      </div>
 
-        <div class="border-2 border-yellow-300 rounded-xl px-3 py-1 flex cursor-pointer">
-            <img src="../photos/home/mobile.svg" alt="phone" class="h-5 w-5">
-            <button class="text-yellow-200">Contact us</button> 
-        </div>
+      <div class="text-gray-400 flex items-center gap-5 border-2 border-gray-800 rounded-2xl px-4 py-1">
+        <a href="./index.html" class="hover:text-white transition duration-300">Home</a>
+        <a href="#" class="hover:text-white transition duration-300">Services</a>
+        <a href="#" class="hover:text-white transition duration-300">Blog</a>
+        <a href="#" class="hover:text-white transition duration-300">About us</a>
+      </div>
+
+      <div class="border-2 border-yellow-300 rounded-xl px-3 py-1 flex cursor-pointer">
+        <img src="../photos/home/mobile.svg" alt="phone" class="h-5 w-5">
+        <button class="text-yellow-200">Contact us</button> 
+      </div>
     </header>
 
     <!-- Content Section -->
-    <section class="p-10 flex flex-col items-center text-center gap-5">
-        <h1 class="text-5xl font-bold text-lime-400">Farm Tech</h1>
-        <p class="max-w-4xl text-lg text-gray-300">
-            Discover how technology is transforming farming for the better. From smart sensors and automated irrigation to AI-powered analytics, Farm Tech is at the heart of modern sustainable agriculture.
+    <section class="p-10 flex flex-col items-center text-center gap-5 relative">
+      <h1 class="text-5xl font-bold text-lime-400">Farm Tech</h1>
+      <p class="max-w-4xl text-lg text-gray-300">
+        Discover how technology is transforming farming for the better. From smart sensors and automated irrigation to AI-powered analytics, Farm Tech is at the heart of modern sustainable agriculture.
+      </p>
+
+      <div class="flex flex-col lg:flex-row justify-around items-center gap-10">
+        <img src="../photos/home/farm_tech.svg" alt="Farm Tech"
+          class="h-48 w-auto mt-5 rounded-xl transition-transform duration-500 hover:scale-105">
+
+        <div class="mt-10 max-w-5xl text-left">
+          <h2 class="text-2xl font-bold mb-3">🔍 What We Offer:</h2>
+          <ul class="list-disc list-inside text-gray-300 space-y-2">
+            <li>Precision agriculture tools and techniques</li>
+            <li>Data-driven crop monitoring systems</li>
+            <li>Smart irrigation solutions</li>
+            <li>IoT integration for real-time data</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Toggle Button -->
+      <button onclick="toggleTechInfo()" class="mt-6 bg-lime-500 hover:bg-lime-600 text-black font-semibold px-5 py-2 rounded-xl transition duration-300">
+        Show More Tech Benefits
+      </button>
+
+      <!-- Slide-out Panel -->
+      <div id="techInfo" class="slide-info bg-gray-800 p-6 rounded-2xl shadow-xl text-left">
+        <h2 class="text-xl font-bold text-white mb-3">🌐 Advanced Farm Tech Perks</h2>
+        <ul class="text-gray-300 space-y-3">
+          <li>📡 Satellite-driven yield mapping</li>
+          <li>🌦️ Climate-smart crop prediction AI</li>
+          <li>🔋 Solar-powered IoT sensor kits</li>
+          <li>📲 Remote control for irrigation/fertilization</li>
+        </ul>
+      </div>
+
+      <!-- Push footer down with dummy content -->
+      <div class="mt-20 max-w-4xl text-left">
+        <h2 class="text-3xl font-semibold text-lime-400 mb-4">Why It Matters</h2>
+        <p class="text-gray-300 mb-6">
+          Technological innovation in agriculture ensures more food production with fewer resources. It helps reduce waste, monitor soil health, and make timely decisions that can boost yield and protect the environment.
         </p>
+        <p class="text-gray-300">
+          Farmers can now receive real-time alerts, automate crop cycles, and make smarter, data-driven decisions. With Farm Tech, the future of agriculture is not just smart—it's sustainable and scalable.
+        </p>
+      </div>
 
-        <div class="flex justify-around items-center gap-10">
-            <img src="../photos/home/farm_tech.svg" alt="Farm Tech" class="h-30 w-30 mt-5 rounded-xl">
-
-            <div class="mt-10 max-w-5xl text-left">
-                <h2 class="text-2xl font-bold mb-3">🔍 What We Offer:</h2>
-                <ul class="list-disc list-inside text-gray-300 space-y-2">
-                 <li>Precision agriculture tools and techniques</li>
-                  <li>Data- driven crop monitoring systems</li>
-                   <li>Smart irrigation solutions<li>
-                   <li>IOT integration for real-time data.</li>
-             </ul>
-            </div>
-        </div>
     </section>
+  </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 mt-10 py-4">
-        <div class="text-center text-gray-400">
-            © 2025 AgriGrow. All rights reserved.
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-4 w-full">
+    <div class="text-center text-gray-400">
+      © 2025 AgriGrow. All rights reserved.
+    </div>
+  </footer>
 
 </body>
 </html>
