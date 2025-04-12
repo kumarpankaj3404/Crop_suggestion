@@ -29,7 +29,7 @@
     transform: scale(0.95);
 }
 
-@keyframes phone-ring {
+/* @keyframes phone-ring {
     0% { transform: translateX(0); }
     25% { transform: translateX(-3px); }
     75% { transform: translateX(3px); }
@@ -44,7 +44,7 @@
 .phone-button:hover {
     animation: phone-ring 0.15s ease-in-out infinite;
     cursor: pointer;
-}
+} */
 
 /* Accordion styles */
 .hidden { display: none; }
@@ -114,3 +114,15 @@ img { transition: transform 0.3s ease; }
     transform: rotate(360deg);
   }
   
+  #profile-menu {
+    transform-origin: top right;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+#profile-menu.active {
+    opacity: 1;
+    transform: scale(1);
+    display: block;
+}

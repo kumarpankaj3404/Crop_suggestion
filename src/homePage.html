@@ -6,6 +6,7 @@
     <title>Document</title>
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="./homecss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="font-mono bg-gray-950 text-white relative">
 
@@ -27,9 +28,15 @@
         </div>
         
 
-        <div class="border-2 border-yellow-300 rounded-xl pl-3 pr-3 mr-2 flex cursor-pointer ">
-            <img src="../photos/home/mobile.svg" alt="phone" class="h-5 w-5 phone-button">
-            <button class="cursor-pointer text-yellow-200 ">Contact us</button> 
+        <div class="relative">
+            <button id="menu-btn" class="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="fa-solid fa-bars text-white text-xl"></i>
+            </button>
+        
+            <div id="profile-menu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl py-2">
+                <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700">Profile</a>
+                <a href="./login.html" class="block px-4 py-2 text-white hover:bg-gray-700">Logout</a>
+            </div>
         </div>
 
     </header>
@@ -37,8 +44,19 @@
 
 
 
-    <div class="mt-5 bg-[url(../photos/home/back1.jpg)] h-155 bg-cover flex flex-col items-center justify-center rounded-2xl ml-5 mr-5">
-        <div class="flex flex-col items-center justify-center w-200 text-white">
+    <div class="mt-5 relative h-155 flex flex-col items-center justify-center rounded-2xl ml-5 mr-5 overflow-hidden">
+    <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline
+        class="absolute z-0 w-full h-full object-cover"
+    >
+
+        <source src="../photos/home/8333971-uhd_4096_2160_25fps.mp4" type="video/mp4">
+    </video>
+
+        <div class=" relative z-10 flex flex-col items-center justify-center w-200 text-white">
             <h1 class="text-6xl font-bold text-center mb-10">
                 Sustainable farming<br> for a healthier planet
             </h1>
@@ -324,6 +342,21 @@ Together, let’s grow more with less and build a greener tomorrow.
             });
         });
     });
+
+    const menuButton = document.getElementById('menu-btn');
+const profileMenu = document.getElementById('profile-menu');
+
+menuButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    profileMenu.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!profileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+        profileMenu.classList.remove('active');
+    }
+});
         </script>
         
 </body>
