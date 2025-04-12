@@ -1,3 +1,50 @@
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$conn = mysqli_connect("localhost", "root", "", "crop");
+
+$recommended_crop = "";
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Ensure all expected keys exist before using them
+    $expected_keys = ['nitrogen', 'phosphorus', 'potassium', 'temperature', 'humidity', 'ph', 'rainfall'];
+    $input = [];
+
+    foreach ($expected_keys as $key) {
+        // If key is missing or empty, set to 0 or handle appropriately
+        $input[$key] = isset($_POST[$key]) ? (float)$_POST[$key] : 0;
+    }
+
+    // Fetch crop data
+    $query = "SELECT * FROM crop_data";
+    $result = mysqli_query($conn, $query);
+
+    $min_diff = PHP_FLOAT_MAX;
+    $closest_crop = "No crop found";
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $diff = 0;
+        foreach ($expected_keys as $key) {
+            if (isset($row[$key])) {
+                $diff += abs($input[$key] - (float)$row[$key]);
+            }
+        }
+
+        // Assuming crop name is stored in a column named 'crop'
+        if ($diff < $min_diff) {
+            $min_diff = $diff;
+            $closest_crop = $row['crop'];
+        }
+    }
+
+    $recommended_crop = $closest_crop;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,47 +113,8 @@
             <div class="w-full max-w-4xl mx-auto bg-opacity-70 p-8 rounded-xl mb-10">
                 <h3 class="text-xl font-semibold   text-white text-center">Tell us about your agricultural field</h3>
                 <h3 class="text-xl font-semibold mb-6 py-2 text-white text-center">Please enter the following soil and environmental details</h3>                
-                <!-- <div class="space-y-8">
-                    <div class="flex flex-row justify-center mb-2 gap-3">
-                        <div class="min-w-[180px]">
-                            <label class="block text-white mb-2 text-center">Nitrogen (ppm)</label>
-                            <input type="number" placeholder="90" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-lime-500 focus:outline-none">
-                        </div>
-                        
-                        <div class="min-w-[180px]">
-                            <label class="block text-white mb-2 text-center">Phosphorous (ppm)</label>
-                            <input type="number" placeholder="42" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-lime-500 focus:outline-none">
-                        </div>
-                        
-                        <div class="min-w-[180px]">
-                            <label class="block text-white mb-2 text-center">Potassium (ppm)</label>
-                            <input type="number" placeholder="43" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-lime-500 focus:outline-none">
-                        </div>
-                        
-                        <div class="min-w-[180px]">
-                            <label class="block text-white mb-2 text-center">Temperature (°C)</label>
-                            <input type="number" placeholder="21" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-lime-500 focus:outline-none">
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-row justify-center gap-3">
-                        <div class="min-w-[180px]">
-                            <label class="block text-white mb-2 text-center">Humidity (%)</label>
-                            <input type="number" placeholder="82" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-lime-500 focus:outline-none">
-                        </div>
-                        
-                        <div class="min-w-[180px]">
-                            <label class="block text-white mb-2 text-center">pH Level</label>
-                            <input type="number" step="0.1" placeholder="6.5" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-lime-500 focus:outline-none">
-                        </div>
-                        
-                        <div class="min-w-[180px]">
-                            <label class="block text-white mb-2 text-center">Rainfall (mm)</label>
-                            <input type="number" placeholder="203" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-lime-500 focus:outline-none">
-                        </div>
-                    </div>
-                </div>-->
-                <form action="recomend_crop.php" method="POST">
+               
+                <form action="" method="POST">
                     <div class="space-y-8">
                         <!-- All input fields remain the same -->
                         <!-- Just add name="" attributes to each input -->
@@ -117,7 +125,8 @@
                             </div>
                             <div class="min-w-[180px]">
                                 <label class="block text-white mb-2 text-center">Phosphorous (ppm)</label>
-                                <input type="number" name="phosphorous" placeholder="42" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg">
+                                <input type="number" name="phosphorus" placeholder="42" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg">
+
                             </div>
                             <div class="min-w-[180px]">
                                 <label class="block text-white mb-2 text-center">Potassium (ppm)</label>
@@ -151,11 +160,17 @@
                         </button>
                     </div>
                 </form>
+
+                <?php if (!empty($recommended_crop)): ?>
+                    <div class="mt-8 bg-green-800 text-white p-4 rounded-lg text-xl font-semibold">
+                        Recommended Crop: <span class="text-lime-300"><?php echo htmlspecialchars($recommended_crop); ?></span>
+                    </div>
+                <?php endif; ?>
                 
-                
-                
+
             </div>
         </div> 
+
         
         <footer class=" bg-gray-900  h-8 mt-5  w-full">
             <div class="flex justify-center items-center ">
