@@ -14,11 +14,8 @@
     --color-lime-400: oklch(0.841 0.238 128.85);
     --color-lime-500: oklch(0.768 0.233 130.85);
     --color-lime-600: oklch(0.648 0.2 131.684);
-<<<<<<< HEAD
-=======
     --color-green-600: oklch(0.627 0.194 149.214);
     --color-green-800: oklch(0.448 0.119 151.328);
->>>>>>> 76a9b5d4e6d0aa5b785f5369283980f7a1e7c0a7
     --color-indigo-600: oklch(0.511 0.262 276.966);
     --color-indigo-800: oklch(0.398 0.195 277.366);
     --color-gray-100: oklch(0.967 0.003 264.542);
@@ -317,12 +314,9 @@
   .z-30 {
     z-index: 30;
   }
-<<<<<<< HEAD
   .z-50 {
     z-index: 50;
   }
-=======
->>>>>>> 76a9b5d4e6d0aa5b785f5369283980f7a1e7c0a7
   .z-auto {
     z-index: auto;
   }
@@ -641,12 +635,9 @@
   .h-48 {
     height: calc(var(--spacing) * 48);
   }
-<<<<<<< HEAD
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
-=======
->>>>>>> 76a9b5d4e6d0aa5b785f5369283980f7a1e7c0a7
   .h-70 {
     height: calc(var(--spacing) * 70);
   }
@@ -707,13 +698,11 @@
   .w-30 {
     width: calc(var(--spacing) * 30);
   }
-<<<<<<< HEAD
-  .w-60 {
-    width: calc(var(--spacing) * 60);
-=======
   .w-48 {
     width: calc(var(--spacing) * 48);
->>>>>>> 76a9b5d4e6d0aa5b785f5369283980f7a1e7c0a7
+  }
+  .w-60 {
+    width: calc(var(--spacing) * 60);
   }
   .w-80 {
     width: calc(var(--spacing) * 80);
@@ -1621,33 +1610,24 @@
   .bg-\[url\(\.\.\/photos\/home\/farm\.jpg\)\] {
     background-image: url(../photos/home/farm.jpg);
   }
-  .bg-\[url\(\.\.\/photos\/home\/farm\.jpg\)\] {
-    background-image: url(../photos/home/farm.jpg);
-  }
   .bg-none {
     background-image: none;
   }
   .via-none {
     --tw-gradient-via-stops: initial;
   }
-<<<<<<< HEAD
-=======
   .from-green-800 {
     --tw-gradient-from: var(--color-green-800);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
->>>>>>> 76a9b5d4e6d0aa5b785f5369283980f7a1e7c0a7
   .from-indigo-600 {
     --tw-gradient-from: var(--color-indigo-600);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
-<<<<<<< HEAD
-=======
   .to-green-600 {
     --tw-gradient-to: var(--color-green-600);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
->>>>>>> 76a9b5d4e6d0aa5b785f5369283980f7a1e7c0a7
   .to-indigo-800 {
     --tw-gradient-to: var(--color-indigo-800);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -1799,6 +1779,9 @@
   }
   .object-top {
     object-position: top;
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
   .p-3 {
     padding: calc(var(--spacing) * 3);
@@ -2597,8 +2580,6 @@
       }
     }
   }
-<<<<<<< HEAD
-=======
   .hover\:bg-gray-700 {
     &:hover {
       @media (hover: hover) {
@@ -2613,7 +2594,6 @@
       }
     }
   }
->>>>>>> 76a9b5d4e6d0aa5b785f5369283980f7a1e7c0a7
   .hover\:bg-lime-600 {
     &:hover {
       @media (hover: hover) {
@@ -2621,7 +2601,6 @@
       }
     }
   }
-<<<<<<< HEAD
   .hover\:bg-yellow-300 {
     &:hover {
       @media (hover: hover) {
@@ -2629,12 +2608,17 @@
       }
     }
   }
-=======
->>>>>>> 76a9b5d4e6d0aa5b785f5369283980f7a1e7c0a7
   .hover\:pr-0 {
     &:hover {
       @media (hover: hover) {
         padding-right: calc(var(--spacing) * 0);
+      }
+    }
+  }
+  .hover\:text-black {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-black);
       }
     }
   }
@@ -2645,26 +2629,6 @@
       }
     }
   }
-<<<<<<< HEAD
-  .focus\:ring-2 {
-    &:focus {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentColor);
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-  }
-  .focus\:ring-lime-500 {
-    &:focus {
-      --tw-ring-color: var(--color-lime-500);
-    }
-  }
-  .focus\:outline-none {
-    &:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-  }
-=======
->>>>>>> 76a9b5d4e6d0aa5b785f5369283980f7a1e7c0a7
   .active\:scale-95 {
     &:active {
       --tw-scale-x: 95%;
