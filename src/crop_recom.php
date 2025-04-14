@@ -3,7 +3,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// Establish database connection
 $conn = mysqli_connect("localhost", "root", "", "crop");
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
 $recommended_crop = "";
 
@@ -82,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body class="font-mono bg-gray-950 text-white relative">
-    <header class="flex justify-between  items-center bg-gray-950 h-15 sticky top-0 z-2">
+<header class="flex justify-between  items-center bg-gray-950 h-15 sticky  z-20 border-b-2 border-b-gray-900 top-0 pl-3 pr-3">
         <div class="flex gap-2  items-center">
             <a href="./homePage.html" class="flex items-center gap-2">
                 <img src="../photos/home/logo.png" alt="logo" class="h-10 w-10 rounded-4xl">
@@ -92,19 +98,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class=" text-gray-400 flex items-center gap-5 border-2 border-gray-800 rounded-2xl pl-4 pr-4 pt-1 pb-1">
             <a href="./homePage.html" class=" hover:text-white">Home</a>
-            <a href="./weather.html" class=" hover:text-white">Services</a>
-            <a href="" class=" hover:text-white">Blog</a>
-            <a href="" class=" hover:text-white">About us</a>
+            <a href="./SUNSIDIES.html" class=" hover:text-white">Subsidies</a>
+            <a href="./blog.html" class=" hover:text-white">Blog</a>
+            <a href="./homePage.html#About" class=" hover:text-white">About us</a>
         </div>
         
 
-        <div class="border-2 border-yellow-300 rounded-xl pl-3 pr-3 mr-2 flex cursor-pointer ">
-            <img src="../photos/home/mobile.svg" alt="phone" class="h-5 w-5 phone-button">
-            <button class="cursor-pointer text-yellow-200 ">Contact us</button> 
+        <div class="relative">
+            <button id="menu-btn" class="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+                <i class="fa-solid fa-bars text-white text-xl"></i>
+            </button>
+        
+            <div id="profile-menu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl py-2">
+                <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700">Profile</a>
+                <a href="./login.html" class="block px-4 py-2 text-white hover:bg-gray-700">Logout</a>
+            </div>
         </div>
 
     </header>
-    
+
+    <script src="../jquery-3.7.1.js"></script>
     <div class="bg-crop_recommendation min-h-screen flex flex-col items-center ">
         <div class="content-container container mx-auto px-4  flex flex-col items-center justify-end w-full text-center" >
             <h1 class="text-6xl font-bold mb-6 text-white py-2">Crop Recommendation</h1>
@@ -155,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 
                     <div class="text-center mt-6">
-                        <button type="submit" class="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-6 rounded-2xl mt-8 mb-2 shadow-lg transition-all duration-300 ease-in-out text-lg hover:scale-105 active:scale-95">
+                        <button type="submit" id="show" class="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-6 rounded-2xl mt-8 mb-2 shadow-lg transition-all duration-300 ease-in-out text-lg hover:scale-105 active:scale-95">
                             Get Crop Recommendations
                         </button>
                     </div>
@@ -177,5 +190,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>© 2021 AgriGrow. All rights reserved</p>
             </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $("#show").click(function(){
+                $().fadeIn(200);
+            });
+        });
+
+    </script>
 </body>
 </html>
