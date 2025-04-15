@@ -47,11 +47,10 @@
             border-radius: 16px;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .weather-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
         .glow-button {
@@ -121,31 +120,86 @@
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
             cursor: pointer;
         }
+        .hidden {
+            display: none;
+        }
+        #profile-menu {
+            right: 0;
+            top: 100%;
+            z-index: 1000;
+        }
+        .hover-effect:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .transition-effect {
+            transition: all 0.3s ease;
+        }
+        .text-animate {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, white);
+            /* -webkit-background-clip: text; */
+            -webkit-text-fill-color: transparent;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .underline-effect {
+            position: relative;
+        }
+        .underline-effect::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #f6f6f9;
+            left: 0;
+            bottom: -4px;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .underline-effect:hover::after {
+            transform: scaleX(1);
+        }
     </style>
 </head>
 <body class="font-mono bg-gray-950 text-white relative text-center items-center">
-    <header class="flex justify-between items-center bg-gray-950 h-15 sticky top-0 z-2">
+    <header class="flex justify-between  items-center bg-gray-950 h-15 sticky  z-20 border-b-2 border-b-gray-900 top-0 pl-3 pr-3">
         <div class="flex gap-2  items-center">
             <a href="./homePage.html" class="flex items-center gap-2">
                 <img src="../photos/home/logo.png" alt="logo" class="h-10 w-10 rounded-4xl">
                 <h3 class="">AgriGrow</h3>
             </a>
         </div>
+
         <div class="text-gray-400 flex items-center gap-5 border-2 border-gray-800 rounded-2xl pl-4 pr-4 pt-1 pb-1">
-            <a href="./homePage.html" class="hover:text-white">Home</a>
-            <a href="./weather.html" class="hover:text-white">Services</a>
-            <a href="" class="hover:text-white">Blog</a>
-            <a href="" class="hover:text-white">About us</a>
+            <a href="./homePage.html" class="hover:text-white hover-effect ">Home</a>
+            <a href="./SUNSIDIES.html" class="hover:text-white hover-effect">Subsidies</a>
+            <a href="./blog.html" class="hover:text-white hover-effect ">Blog</a>
+            <a href="./homePage.html#About" class="hover:text-white hover-effect ">About us</a>
         </div>
-        <div class="border-2 border-yellow-300 rounded-xl pl-3 pr-3 mr-2 flex cursor-pointer">
-            <img src="../photos/home/mobile.svg" alt="phone" class="h-5 w-5 phone-button">
-            <button class="cursor-pointer text-yellow-200">Contact us</button>
+
+        <div class="relative">
+            <button id="menu-btn" class="p-2 hover:bg-gray-800 rounded-lg transition-colors hover-effect">
+                <i class="fa-solid fa-bars text-white text-xl"></i>
+            </button>
+
+            <div id="profile-menu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl py-2 transition-effect">
+                <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700 hover-effect">Profile</a>
+                <a href="./login.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover-effect">Logout</a>
+            </div>
         </div>
     </header>
 
     <div class="bg-weather min-h-screen flex flex-col items-center">
         <div class="content-container container mx-auto px-4 flex flex-col items-center justify-end w-full text-center" style="padding-bottom: 0;">
-            <h1 class="text-6xl font-bold mb-6 text-white">Weather Predictions</h1>
+            <h1 class="text-6xl font-bold mb-6 text-white gradient-text text-shadow underline-effect">Weather Predictions</h1>
             <p class="text-center mb-10 text-xl text-white px-4 max-w-4xl mx-auto">Get accurate and real-time weather forecasts tailored to your specific region to help you make better farming decisions. Our system provides updates on temperature, precipitation, and other critical weather patterns to ensure your crops thrive.</p>
             
             <div class="search-box w-full mb-10 px-5 h-20 flex items-center">
@@ -429,6 +483,17 @@
                 }
             }
         }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menu-btn');
+            const profileMenu = document.getElementById('profile-menu');
+
+            menuBtn.addEventListener('click', function() {
+                profileMenu.classList.toggle('hidden');
+                profileMenu.classList.toggle('transition-effect');
+            });
+        });
     </script>
 </body>
 </html>

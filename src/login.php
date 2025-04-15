@@ -110,20 +110,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
             .toggle-panel {
                 transition: all 0.6s ease-in-out;
             }
+            .fade-in {
+                opacity: 0;
+                animation: fadeIn ease 1s;
+                animation-fill-mode: forwards;
+            }
+            @keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            .hover-effect:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .bg-gradient {
+                background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+            }
+            .text-gradient {
+                background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .shadow-lg {
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
         }
     </style>
 </head>
-<body class="font-['Montserrat'] bg-[url(../photos/home/farm.jpg)] bg-cover bg-no-repeat bg-center backdrop-blur-sm">
+<body class="font-['Montserrat'] bg-[url(../photos/home/farm.jpg)] bg-cover bg-no-repeat bg-center backdrop-blur-sm fade-in">
     <div class="flex items-center justify-center flex-col h-screen w-full">
-        <div class="container bg-white rounded-[30px] shadow-lg relative overflow-hidden w-full max-w-4xl min-h-[480px]" id="container">
+        <div class="container bg-white rounded-[30px] shadow-lg relative overflow-hidden w-full max-w-4xl min-h-[480px] hover-effect" id="container">
             <div class="form-container sign-up absolute top-0 h-full w-1/2 left-0 opacity-0 z-0">
                 <form class="bg-white flex items-center justify-center flex-col px-10 h-full" method="POST" action="">
-                    <h1 class="text-2xl font-bold mb-4">Create Account</h1>
+                    <h1 class="text-2xl font-bold mb-4 text-gradient">Create Account</h1>
                     <span class="text-xs mb-5">or use your email for registration</span>
                     <input type="text" name="name" placeholder="Name" class="bg-gray-100 border-none my-2 py-2.5 px-4 text-sm rounded-lg w-full outline-none">
                     <input type="email" name="email" placeholder="Email" class="bg-gray-100 border-none my-2 py-2.5 px-4 text-sm rounded-lg w-full outline-none">
                     <input type="password" name="password" placeholder="Password" class="bg-gray-100 border-none my-2 py-2.5 px-4 text-sm rounded-lg w-full outline-none">
-                    <button type="submit" name="signup" class="bg-indigo-800 text-white text-xs py-2.5 px-11 border border-transparent rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer">
+                    <button type="submit" name="signup" class="bg-gradient text-white text-xs py-2.5 px-11 border border-transparent rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer hover-effect">
                         Sign Up
                     </button>
                     <?php if (!empty($message)) { ?>
@@ -134,18 +158,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
             <div class="form-container sign-in absolute top-0 h-full w-1/2 left-0 z-20">
                 <form class="bg-white flex items-center justify-center flex-col px-10 h-full" method="POST" action="">
-                    <h1 class="text-2xl font-bold mb-4">Log In</h1>
+                    <h1 class="text-2xl font-bold mb-4 text-gradient">Log In</h1>
                     <div class="social-icons my-5">
-                        <a href="#" class="icon border border-gray-300 rounded-full inline-flex justify-center items-center mx-1 w-10 h-10">
+                        <a href="#" class="icon border border-gray-300 rounded-full inline-flex justify-center items-center mx-1 w-10 h-10 hover-effect">
                             <i class="fa-brands fa-google"></i>
                         </a>
-                        <a href="#" class="icon border border-gray-300 rounded-full inline-flex justify-center items-center mx-1 w-10 h-10">
+                        <a href="#" class="icon border border-gray-300 rounded-full inline-flex justify-center items-center mx-1 w-10 h-10 hover-effect">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="icon border border-gray-300 rounded-full inline-flex justify-center items-center mx-1 w-10 h-10">
+                        <a href="#" class="icon border border-gray-300 rounded-full inline-flex justify-center items-center mx-1 w-10 h-10 hover-effect">
                             <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="#" class="icon border border-gray-300 rounded-full inline-flex justify-center items-center mx-1 w-10 h-10">
+                        <a href="#" class="icon border border-gray-300 rounded-full inline-flex justify-center items-center mx-1 w-10 h-10 hover-effect">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
                     </div>
@@ -153,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                     <input type="email" name="email" placeholder="Email" class="bg-gray-100 border-none my-2 py-2.5 px-4 text-sm rounded-lg w-full outline-none">
                     <input type="password" name="password" placeholder="Password" class="bg-gray-100 border-none my-2 py-2.5 px-4 text-sm rounded-lg w-full outline-none">
                     
-                    <button class="bg-indigo-800 text-white text-xs mt-3 py-2.5 px-11 border border-transparent rounded-lg font-semibold tracking-wider uppercase cursor-pointer" name="login">
+                    <button class="bg-gradient text-white text-xs mt-3 py-2.5 px-11 border border-transparent rounded-lg font-semibold tracking-wider uppercase cursor-pointer hover-effect" name="login">
                         Log In
                     </button>
                     <?php if (!empty($message) && isset($_POST['signin'])) { ?>
