@@ -106,12 +106,12 @@ img { transition: transform 0.3s ease; }
 }
 .rotate-image {
     width: 150px;
-    height: 150px;
-    transition: transform 10s linear;
+    height: 100px;
+    transition: transform 10s ease-in-out;
   }
   
   .rotate-image:hover {
-    transform: rotate(360deg);
+    transform: rotate(7200deg);
   }
   
   #profile-menu {
