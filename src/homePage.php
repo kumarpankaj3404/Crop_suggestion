@@ -6,7 +6,8 @@ session_start(); // Start the session
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><img src="favicon2.svg" alt="">Document</title>
+    <title>Agri-Grow</title>
+    <link rel="icon" href="../photos/home/favicon2.svg" type="image/svg+xml">
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="./homecss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,8 +27,8 @@ session_start(); // Start the session
 
     <div class="text-gray-400 flex items-center gap-5 border-2 border-gray-800 rounded-2xl pl-4 pr-4 pt-1 pb-1">
         <a href="./homePage.php" class="hover:text-white">Home</a>
-        <a href="./SUNSIDIES.html" class="hover:text-white">Subsidies</a>
-        <a href="./blog.html" class="hover:text-white">Blog</a>
+        <a href="./SUNSIDIES.php" class="hover:text-white">Subsidies</a>
+        <a href="./blog.php" class="hover:text-white">Blog</a>
         <a href="./homePage.php#About" class="hover:text-white">About us</a>
     </div>
 
@@ -111,7 +112,7 @@ Together, let’s grow more with less and build a greener tomorrow.
                     </p>
                 </div>
                 </a>
-                <a href="./weather.html" class="block">
+                <a href="./weather.php" class="block">
                 <div class="rounded-2xl border-2 border-gray-900 bg-gray-800  w-80">
                     <img src="../photos/home/service_weather2.jpg" alt="crop" class="h-70 w-80 rounded-2xl">
                     <h3 class="m-3 text-lg font-bold">
@@ -122,7 +123,7 @@ Together, let’s grow more with less and build a greener tomorrow.
                     </p>
                 </div>
                 </a>
-                <a href="./pest.html" class="block">
+                <a href="./pest.php" class="block">
                 <div class="rounded-2xl border-2 border-gray-900 bg-gray-800 w-80">
                     <img src="../photos/home/service_pesticidesjpg.jpg" alt="crop" class="h-70 w-80 rounded-2xl">
                     <h3 class="m-3 text-lg font-bold">
@@ -261,10 +262,10 @@ Together, let’s grow more with less and build a greener tomorrow.
                 <img src="../photos/home/community.svg" alt="partner4" class="h-25 w-30 rounded-2xl">
             </div>
             <div class="partner_img flex justify-between gap-5 mt-3">
-                <a href="./farmtech.html"><p class="w-30 text-center ">farm_tech </p></a>
-                <a href="./support.html"><p class="w-30 text-center ">Support </p></a>
-                <a href="./sustainable.html"><p class="w-30 text-center ">Sustainable </p></a>
-                <a href="./community.html"><p class="w-30 text-center ">community </p></a>
+                <a href="./farmtech.php"><p class="w-30 text-center ">farm_tech </p></a>
+                <a href="./support.php"><p class="w-30 text-center ">Support </p></a>
+                <a href="./sustainable.php"><p class="w-30 text-center ">Sustainable </p></a>
+                <a href="./community.php"><p class="w-30 text-center ">community </p></a>
                 
             </div>
         </div>
@@ -286,9 +287,9 @@ Together, let’s grow more with less and build a greener tomorrow.
         <div class="Quick_link  flex flex-col" >
             <h1>Quick Links</h1>
             <div class="flex flex-col gap-2 mt-3">
-                <a href="./homePage.html" class="flex items-center gap-3"><img src="../photos/home/home-1-svgrepo-com.svg" alt="" class="h-4 w-3">Home</a>
-                <a href="./blog.html" class="flex items-center gap-3"><img src="../photos/home/blog-svgrepo-com.svg" alt="" class="h-4 w-3">Blog</a>
-                <a href="./homePage.html#About" class="flex items-center gap-3"><img src="../photos/home/about.svg" alt="" class="h-4 w-4">About us</a>
+                <a href="./homePage.php" class="flex items-center gap-3"><img src="../photos/home/home-1-svgrepo-com.svg" alt="" class="h-4 w-3">Home</a>
+                <a href="./blog.php" class="flex items-center gap-3"><img src="../photos/home/blog-svgrepo-com.svg" alt="" class="h-4 w-3">Blog</a>
+                <a href="./homePage.php#About" class="flex items-center gap-3"><img src="../photos/home/about.svg" alt="" class="h-4 w-4">About us</a>
             </div>
         </div>
 
@@ -296,8 +297,8 @@ Together, let’s grow more with less and build a greener tomorrow.
             <h1 class="text-center">Services</h1>
             <div class="flex flex-col gap-2 mt-3">
                 <a href="./crop_recom.php">Crop Recomendation</a>
-                <a href="./weather.html">Weather Alerts</a>
-                <a href="./pest.html">Pest Management </a>
+                <a href="./weather.php">Weather Alerts</a>
+                <a href="./pest.php">Pest Management </a>
             </div>
         </div>
 

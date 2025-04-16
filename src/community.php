@@ -1,42 +1,55 @@
+<?php
+session_start(); // Start the session
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community - AgriGrow</title>
+    <title>Agri-Grow</title>
     <link rel="icon" href="../photos/home/favicon2.svg" type="image/svg+xml">
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="./homecss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
-<body class="font-mono bg-gray-950 text-white  ">
+<body class="font-mono bg-gray-950 text-white relative">
 
-    <!-- Header -->
-    <header class="flex justify-between  items-center bg-gray-950 h-15 sticky  z-20 border-b-2 border-b-gray-900 top-0 pl-3 pr-3">
-        <div class="flex gap-2  items-center">
-            <a href="./homePage.html" class="flex items-center gap-2">
-                <img src="../photos/home/logo.png" alt="logo" class="h-10 w-10 rounded-4xl">
-                <h3 class="">AgriGrow</h3>
-            </a>
-        </div>
 
-        <div class="text-gray-400 flex items-center gap-5 border-2 border-gray-800 rounded-2xl pl-4 pr-4 pt-1 pb-1">
-            <a href="./homePage.html" class="hover:text-white hover-effect ">Home</a>
-            <a href="./SUNSIDIES.html" class="hover:text-white hover-effect">Subsidies</a>
-            <a href="./blog.html" class="hover:text-white hover-effect ">Blog</a>
-            <a href="./homePage.html#About" class="hover:text-white hover-effect ">About us</a>
-        </div>
 
-        <div class="relative">
-            <button id="menu-btn" class="p-2 hover:bg-gray-800 rounded-lg transition-colors hover-effect">
-                <i class="fa-solid fa-bars text-white text-xl"></i>
-            </button>
+<header class="flex justify-between items-center bg-gray-950 h-15 sticky z-20 border-b-2 border-b-gray-900 top-0 pl-3 pr-3">
+    <div class="flex gap-2 items-center">
+        <a href="./homePage.php" class="flex items-center gap-2">
+            <img src="../photos/home/logo.png" alt="logo" class="h-10 w-10 rounded-4xl">
+            <h3 class="">AgriGrow</h3>
+        </a>
+    </div>
 
-            <div id="profile-menu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl py-2 transition-effect">
-                <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700 hover-effect">Profile</a>
-                <a href="./login.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover-effect">Logout</a>
+    <div class="text-gray-400 flex items-center gap-5 border-2 border-gray-800 rounded-2xl pl-4 pr-4 pt-1 pb-1">
+        <a href="./homePage.php" class="hover:text-white">Home</a>
+        <a href="./SUNSIDIES.php" class="hover:text-white">Subsidies</a>
+        <a href="./blog.php" class="hover:text-white">Blog</a>
+        <a href="./homePage.php#About" class="hover:text-white">About us</a>
+    </div>
+
+    <div class="relative">
+        <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+            <div class="flex items-center gap-2">
+                <button id="menu-btn" class="p-2 hover:bg-gray-800 rounded-lg transition-colors flex items-center gap-2">
+                    <span class="text-white"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                    <i class="fa-solid fa-caret-down text-white text-sm"></i>
+                </button>
+            
+                <div id="profile-menu" class="hidden absolute  right-0 mt-10 top-10 w-48 bg-gray-800 rounded-lg shadow-xl py-2">
+                    <span class="block px-4 py-2 text-gray-400 cursor-default"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                    <a href="./logout.php" class="block px-4 py-2 text-white hover:bg-gray-700">Logout</a>
+                </div>
             </div>
-        </div>
-    </header>
+        <?php else: ?>
+            <a href="./login.php" class="p-2 bg-lime-500 text-white rounded-lg hover:bg-lime-600 transition-colors">Login</a>
+        <?php endif; ?>
+    </div>
+</header>
 
     <!-- Community Section -->
     <section class="p-10 flex flex-col items-center text-center gap-5">
