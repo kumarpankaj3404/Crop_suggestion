@@ -111,7 +111,7 @@ img { transition: transform 0.3s ease; }
   }
   
   .rotate-image:hover {
-    transform: rotate(7200deg);
+    transform: rotate(360deg);
   }
   
   #profile-menu {
