@@ -148,7 +148,7 @@ Together, let’s grow more with less and build a greener tomorrow.
 
 
 
-    <div class="flex flex-col items-center mt-25" id="About">
+    <div class="flex flex-col items-center mt-25" >
         <h1 class="text-3xl font-bold mb-4">
             Our Farming Methodology
         </h1>
@@ -241,7 +241,55 @@ Together, let’s grow more with less and build a greener tomorrow.
         </div>
     </div>
 
+    
 
+
+
+
+
+    
+    <div class="flex flex-col items-center mt-25" id="About">
+    <h1 class="text-3xl font-bold mb-4 mt-20">About AgriGrow</h1>
+    <p class="w-180 text-center mb-8">
+        AgriGrow is a revolutionary agricultural platform designed to empower farmers with AI-driven insights for sustainable farming. Our mission is to bridge the gap between traditional farming practices and modern technology, helping growers make data-driven decisions to optimize yields while preserving environmental resources.
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Development Team -->
+        <div class="bg-gray-800 p-6 rounded-xl text-center">
+            <h3 class="text-lg font-semibold mb-2">The AgriGrow Team</h3>
+            <div class="space-y-4 mt-4">
+                <div>
+                <a href="https://linkedin.com/in/asthasinghal24" target="_blank"><p class="font-medium">Astha Singhal</p></a>
+                </div>
+                <div>
+                    <p class="font-medium">Kaif Khan</p>
+                    <p class="text-gray-400 text-sm">Agri-Scientist</p>
+                </div>
+                <div>
+                    <p class="font-medium">Muwahid Mir</p>
+                    <p class="text-gray-400 text-sm">Sustainability Expert</p>
+                </div>
+                <div>
+                    <p class="font-medium">Pankaj Kumar</p>
+                    <p class="text-gray-400 text-sm">Data Engineer</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Platform Features -->
+        <div class="bg-gray-800 p-6 rounded-xl">
+            <h3 class="text-lg font-semibold mb-4">Our Features</h3>
+            <ul class="list-disc pl-6 text-gray-300 space-y-2">
+                <li>Smart crop recommendations</li>
+                <li>Real-time weather analysis</li>
+                <li>Pest management solutions</li>
+                <li>Sustainable practice guides</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 
 
@@ -253,7 +301,7 @@ Together, let’s grow more with less and build a greener tomorrow.
 
     <div class="partner bg-gray-900 pl-20 pr-20 ml-5 mr-5 rounded-2xl pt-5 pb-5 mt-25">
         <div>
-            <h1>Benifits to be partnered with us</h1>
+            <h1><strong class="text-2xl">Benifits</strong> to be partnered with us</h1>
             <p>Partner with us to access advanced agricultural technologies, expert support, and a community dedicated to sustainable farming.</p>
             <div class="partner_img flex justify-between gap-5 mt-10">
                 <img src="../photos/home/farm_tech.svg" alt="tech" class="h-25 w-30 rounded-2xl">
@@ -271,6 +319,8 @@ Together, let’s grow more with less and build a greener tomorrow.
         </div>
 
     </div>
+    <!-- About Us Section -->
+
 
 
 
@@ -312,6 +362,10 @@ Together, let’s grow more with less and build a greener tomorrow.
             </div>
         </div>
         
+    </div>
+    
+    <div>
+
     </div>
 
     <footer class=" bg-gray-900  mt-5  w-full">
