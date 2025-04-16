@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Predictions</title>
+    <link rel="icon" href="../photos/home/favicon2.svg" type="image/svg+xml">
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="./homecss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -186,20 +187,20 @@
         </div>
 
         <div class="relative">
-            <button id="menu-btn" class="p-2 hover:bg-gray-800 rounded-lg transition-colors hover-effect">
-                <i class="fa-solid fa-bars text-white text-xl"></i>
+            <button id="menu-btn" class="p-2">
+                <i class="fa-solid fa-bars text-black text-xl"></i>
             </button>
 
             <div id="profile-menu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl py-2 transition-effect">
-                <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700 hover-effect">Profile</a>
+                <a href="#" class="block px-4 py-2 text-white ">Profile</a>
                 <a href="./login.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover-effect">Logout</a>
             </div>
         </div>
     </header>
-
+   
     <div class="bg-weather min-h-screen flex flex-col items-center">
         <div class="content-container container mx-auto px-4 flex flex-col items-center justify-end w-full text-center" style="padding-bottom: 0;">
-            <h1 class="text-6xl font-bold mb-6 text-white gradient-text text-shadow underline-effect">Weather Predictions</h1>
+            <h1 class="text-6xl font-bold mb-6 text-white  text-shadow ">Weather Predictions</h1>
             <p class="text-center mb-10 text-xl text-white px-4 max-w-4xl mx-auto">Get accurate and real-time weather forecasts tailored to your specific region to help you make better farming decisions. Our system provides updates on temperature, precipitation, and other critical weather patterns to ensure your crops thrive.</p>
             
             <div class="search-box w-full mb-10 px-5 h-20 flex items-center">
@@ -484,16 +485,6 @@
             }
         }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuBtn = document.getElementById('menu-btn');
-            const profileMenu = document.getElementById('profile-menu');
-
-            menuBtn.addEventListener('click', function() {
-                profileMenu.classList.toggle('hidden');
-                profileMenu.classList.toggle('transition-effect');
-            });
-        });
-    </script>
+     
 </body>
 </html>
