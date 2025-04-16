@@ -288,9 +288,9 @@ session_start(); // Start the session
                 </div>
             </div>
             
-            <a href="./homePage.php" class="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-6 rounded-2xl inline-block mt-8 mb-2 shadow-lg transition-all duration-300 ease-in-out text-lg hover:scale-105 active:scale-95">
+            <!-- <a href="./homePage.php" class="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-6 rounded-2xl inline-block mt-8 mb-2 shadow-lg transition-all duration-300 ease-in-out text-lg hover:scale-105 active:scale-95">
                 Back to Home
-            </a>
+            </a> -->
         </div>
     </div>
 
