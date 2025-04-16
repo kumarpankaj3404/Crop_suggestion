@@ -118,15 +118,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="relative">
-        <button id="menu-btn" class="p-2 hover:bg-gray-800 rounded-lg transition-colors hover-effect">
-            <i class="fa-solid fa-bars text-white text-xl"></i>
-        </button>
+            <button id="menu-btn" class="p-2">
+                <i class="fa-solid fa-bars text-black text-xl"></i>
+            </button>
 
-        <div id="profile-menu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl py-2 transition-effect">
-            <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700 hover-effect">Profile</a>
-            <a href="./login.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover-effect">Logout</a>
+            <div id="profile-menu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl py-2 transition-effect">
+                <a href="#" class="block px-4 py-2 text-white ">Profile</a>
+                <a href="./login.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover-effect">Logout</a>
+            </div>
         </div>
-    </div>
 </header>
 
 <div class="bg-crop_recommendation min-h-screen flex flex-col items-center">
