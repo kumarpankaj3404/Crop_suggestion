@@ -40,9 +40,11 @@ session_start(); // Start the session
                     <i class="fa-solid fa-caret-down text-white text-sm"></i>
                 </button>
             
-                <div id="profile-menu" class="hidden absolute  right-0 mt-10 top-10 w-48 bg-gray-800 rounded-lg shadow-xl py-2">
+                <div id="profile-menu" class="hidden absolute  right-0 mt-20 w-48 bg-gray-800 rounded-lg shadow-xl py-2">
                     <span class="block px-4 py-2 text-gray-400 cursor-default"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
                     <a href="./logout.php" class="block px-4 py-2 text-white hover:bg-gray-700">Logout</a>
+                    <a href="./profile.php" class="block px-4 py-2 text-white hover:bg-gray-700">Profile</a>
+
                 </div>
             </div>
         <?php else: ?>
