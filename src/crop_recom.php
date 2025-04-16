@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
     .bg-crop_recommendation {
-        background-image: url('../photos/home/crops.jpg');
+        background-image: url('../photos/home/seeds.jpg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;

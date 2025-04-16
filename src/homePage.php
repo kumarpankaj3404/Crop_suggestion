@@ -77,9 +77,15 @@ session_start(); // Start the session
 Get personalized crop recommendations based on your soil and weather conditions.
 Together, let’s grow more with less and build a greener tomorrow.
             </p>
+            <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+                <p class="bg-lime-500 px-6 py-2 rounded-2xl font-bold mt-25 inline-block">
+                   Welcome <?php echo htmlspecialchars($_SESSION['user_name']); ?>
+                </p>
+            <?php else: ?>
             <a href="login.php" class="bg-lime-500 px-6 py-2 rounded-2xl font-bold mt-25 cursor-pointer inline-block">
                 Get Started
             </a>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -265,16 +271,14 @@ Together, let’s grow more with less and build a greener tomorrow.
                 <a href="https://linkedin.com/in/asthasinghal24" target="_blank"><p class="font-medium">Astha Singhal</p></a>
                 </div>
                 <div>
-                    <p class="font-medium">Kaif Khan</p>
-                    <p class="text-gray-400 text-sm">Agri-Scientist</p>
+                <a href="https://linkedin.com/in/kaif-khan-20073228a" target="_blank"><p class="font-medium">Kaif Khan</p></a>
                 </div>
                 <div>
-                    <p class="font-medium">Muwahid Mir</p>
-                    <p class="text-gray-400 text-sm">Sustainability Expert</p>
+               <a href="https://linkedin.com/in/muwahid-mir-4652a8295" target="_blank"><p class="font-medium">Muwahid Mir</p></a>
                 </div>
                 <div>
-                    <p class="font-medium">Pankaj Kumar</p>
-                    <p class="text-gray-400 text-sm">Data Engineer</p>
+                    <a href="https://linkedin.com/in/pankaj-kumar-513a10298" target="_blank"><p class="font-medium">Pankaj Kumar</p></a>
+
                 </div>
                 
             </div>
