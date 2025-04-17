@@ -134,10 +134,10 @@ function getProfileImage($profileData) {
 </head>
 <body class="bg-gray-900 text-white min-h-screen">
     <!-- Header -->
-    <header class="flex justify-between items-center bg-gray-950 h-15 sticky z-20 border-b-2 border-b-gray-900 top-0 pl-3 pr-3">
+    <header class=" pt-3 pb-3 flex justify-between items-center bg-gray-950 h-15 sticky z-20 border-b-2 border-b-gray-900 top-0 pl-3 pr-3">
         <div class="flex gap-2 items-center">
             <a href="./homePage.php" class="flex items-center gap-2">
-                <img src="../photos/home/logo.png" alt="logo" class="h-10 w-10 rounded-4xl">
+                <img src="../photos/home/logo.png" alt="logo" class="h-10 w-10 rounded-full">
                 <h3 class="">AgriGrow</h3>
             </a>
         </div>
