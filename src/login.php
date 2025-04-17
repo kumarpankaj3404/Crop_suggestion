@@ -1,4 +1,3 @@
-
 <!-- CREATE TABLE signin (
     name VARCHAR(100),
     email VARCHAR(100) PRIMARY KEY,
@@ -33,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signup'])) {
             $sql = "INSERT INTO signin (name, email, password) VALUES ('$name', '$email', '$password')";
             if ($conn->query($sql) === TRUE) {
                 $_SESSION['user_name'] = $name;
+                $_SESSION['user_email'] = $email;
                 $_SESSION['logged_in'] = true;
                 $showSuccess = true;
                 header("Location: homePage.php");
@@ -56,8 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            $user = $result->fetch_assoc(); // Fixed variable name (was $checkResult)
+            $user = $result->fetch_assoc();
             $_SESSION['user_name'] = $user['name'];
+            $_SESSION['user_email'] = $user['email'];
             $_SESSION['logged_in'] = true;
             header("Location: homePage.php");
             exit();
