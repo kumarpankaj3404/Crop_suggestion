@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $farm_size = $_POST['farm_size'] ?? '';
     $location = $_POST['location'] ?? '';
     
-    // Handle image upload
+    // Handle image upload for both new profile and profile update
     $profile_image = null;
     if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
         $profile_image = file_get_contents($_FILES['profile_image']['tmp_name']);
@@ -76,6 +76,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         $message = "Error: " . $conn->error;
+    }
+}
+
+// Handle profile image upload separately
+if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
+    $profile_image = file_get_contents($_FILES['profile_image']['tmp_name']);
+    $sql = "UPDATE farmer_profiles SET profile_image=? WHERE email=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("bs", $profile_image, $email);
+    if ($stmt->execute()) {
+        header("Location: profile.php");
+        exit();
     }
 }
 
@@ -162,6 +174,9 @@ function getProfileImage($profileData) {
         <?php if ($_SESSION['has_profile'] && !$isEditing): ?>
             <!-- Profile View -->
             <div class="max-w-4xl mx-auto">
+                <form method="POST" enctype="multipart/form-data" id="profile-image-form" class="hidden">
+                    <input type="file" name="profile_image" id="profile_image" accept="image/*" class="hidden" onchange="handleImageUpload()">
+                </form>
                 <!-- Profile Header -->
                 <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden mb-8">
                     <div class="relative">
@@ -171,12 +186,13 @@ function getProfileImage($profileData) {
                         <!-- Profile Picture and Basic Info -->
                         <div class="flex flex-col md:flex-row items-start px-6 pb-6 -mt-16">
                             <div class="relative group">
-                                <img src="<?php echo getProfileImage($profileData); ?>" alt="Profile" class="w-32 h-32 rounded-full border-4 border-gray-900 object-cover">
-                                <?php if ($isEditing): ?>
-                                <label for="profile_image" class="absolute bottom-2 right-2 bg-lime-500 hover:bg-lime-600 p-2 rounded-full transition-all cursor-pointer">
-                                    <i class="fas fa-camera text-white text-sm"></i>
-                                </label>
-                                <?php endif; ?>
+                                <form method="POST" enctype="multipart/form-data" id="profile-image-form">
+                                    <img src="<?php echo getProfileImage($profileData); ?>" alt="Profile" class="w-32 h-32 rounded-full border-4 border-gray-900 object-cover">
+                                    <label for="profile_image" class="absolute bottom-2 right-2 bg-lime-500 hover:bg-lime-600 p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 cursor-pointer">
+                                        <i class="fas fa-camera text-white text-sm"></i>
+                                    </label>
+                                    <input type="file" name="profile_image" id="profile_image" accept="image/*" class="hidden" onchange="handleImageUpload(this)">
+                                </form>
                             </div>
                             
                             <div class="md:ml-6 mt-4 md:mt-0 w-full">
@@ -254,7 +270,10 @@ function getProfileImage($profileData) {
                     <form method="POST" class="space-y-6" enctype="multipart/form-data">
                         <div class="text-center mb-6">
                             <div class="relative inline-block">
-                                <img src="<?php echo getProfileImage($profileData); ?>" alt="Profile Preview" class="w-32 h-32 rounded-full border-4 border-gray-700 object-cover mx-auto mb-4" id="profile-preview">
+                                <img src="<?php echo $profileData ? getProfileImage($profileData) : '../photos/home/default-profile.png'; ?>" 
+                                     alt="Profile" 
+                                     class="w-32 h-32 rounded-full border-4 border-gray-700 object-cover mx-auto mb-4" 
+                                     id="profile-preview">
                                 <label for="profile_image" class="absolute bottom-2 right-2 bg-lime-500 hover:bg-lime-600 p-2 rounded-full transition-all cursor-pointer">
                                     <i class="fas fa-camera text-white text-sm"></i>
                                 </label>
@@ -320,8 +339,12 @@ function getProfileImage($profileData) {
             if (input.files && input.files[0]) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    document.getElementById('profile-preview').src = e.target.result;
-                }
+                    // Update the preview image
+                    const previewImg = document.getElementById('profile-preview');
+                    if (previewImg) {
+                        previewImg.src = e.target.result;
+                    }
+                };
                 reader.readAsDataURL(input.files[0]);
             }
         }
