@@ -261,8 +261,7 @@ Together, let’s grow more with less and build a greener tomorrow.
     <p class="w-180 text-center mb-8">
         AgriGrow is a revolutionary agricultural platform designed to empower farmers with AI-driven insights for sustainable farming. Our mission is to bridge the gap between traditional farming practices and modern technology, helping growers make data-driven decisions to optimize yields while preserving environmental resources.
     </p>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="flex items-center gap-8">
         <!-- Development Team -->
         <div class="bg-gray-800 p-6 rounded-xl text-center">
             <h3 class="text-lg font-semibold mb-2">The AgriGrow Team</h3>
