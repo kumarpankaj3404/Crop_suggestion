@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+// Initialize $message to prevent undefined variable warning
+$message = '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
