@@ -9,6 +9,9 @@ session_start();
     <title>AgriGrow - Profile Setup</title>
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
     <style>
         /* Animation Styles */
         @keyframes fadeIn {
@@ -151,48 +154,45 @@ session_start();
             <div class="bg-gray-900/50 rounded-xl shadow-lg p-8 border border-lime-500/30">
                 <div class="text-center mb-8">
                     <!-- Profile Picture Upload -->
-                    <div class="image-upload-container">
-                        <img id="profile-preview" class="image-upload-preview" src="" alt="Profile Preview">
-                        <div class="image-upload-placeholder" id="upload-trigger">
-                            <i class="fas fa-camera image-upload-icon"></i>
-                        </div>
-                        <input type="file" id="profile-image-upload" class="image-upload-input" accept="image/*">
-                    </div>
+                     
                     <h1 class="text-3xl font-bold mb-2">Complete Your Profile</h1>
                     <p class="text-gray-400">Set up your profile to get personalized farming recommendations</p>
                 </div>
                 
-                <form id="create-profile-form" class="space-y-6">
+                <form id="create-profile-form" class="space-y-6" method="POST" action="create_profile.php">
                     <div>
                         <label class="block text-gray-400 mb-2">Full Name</label>
-                        <input type="text" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-700 focus:outline-none">
+                        <input type="text" name="name" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-700 focus:outline-none">
                     </div>
                     
                     <div>
                         <label class="block text-gray-400 mb-2">Email Address</label>
-                        <input type="email" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-700 focus:outline-none">
+                        <input type="email" name="email" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-700 focus:outline-none">
                     </div>
                     
                     <div>
                         <label class="block text-gray-400 mb-2">Farm Name</label>
-                        <input type="text" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-700 focus:outline-none">
+                        <input type="text" name="farm_name" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-700 focus:outline-none">
                     </div>
                     
                     <div>
                         <label class="block text-gray-400 mb-2">Farm Size (acres)</label>
-                        <input type="number" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-700 focus:outline-none">
+                        <input type="number" name="farm_size" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-700 focus:outline-none">
                     </div>
                     
                     <div>
                         <label class="block text-gray-400 mb-2">Location</label>
-                        <input type="text" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-700 focus:outline-none">
+                        <input type="text" name="location" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-700 focus:outline-none">
                     </div>
                     
                     <div class="pt-4">
-                        <button type="submit" class="save-btn w-full px-6 py-3 rounded-lg font-bold text-white text-lg">
+                        <button type="submit" name="submit" class="save-btn w-full px-6 py-3 rounded-lg font-bold text-white text-lg">
                             Complete Profile
                         </button>
                     </div>
+                    <?php
+                    echo $message;
+                    ?>
                 </form>
             </div>
         </div>
@@ -452,7 +452,7 @@ session_start();
                 
                 // Update header profile image
                 const headerProfilePic = document.getElementById('header-profile-pic');
-                headerProfilePic.innerHTML = `<img src="${imageUrl}" class="header-profile-img">`;
+                headerProfilePic.innerHTML = <img src="${imageUrl}" class="header-profile-img">;
             }
         });
     </script>
