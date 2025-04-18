@@ -62,13 +62,13 @@ session_start(); // Start the session
         <!-- Sustainable Practices Section -->
 <section class="p-10 ">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-4xl font-bold mb-6 text-center text-black">🌿 Sustainable Agricultural Practices</h2>
-      <p class="mb-4 text-black text-2xl">
+      <h2 class="text-4xl font-bold mb-6 text-center">🌿 Sustainable Agricultural Practices</h2>
+      <p class="mb-4  text-2xl">
         Sustainable agriculture aims to meet society's current food and textile needs without compromising the ability of future generations to meet their own needs. It integrates three main goals: environmental health, economic profitability, and social equity.
       </p>
   
       <!-- Schemes and Subsidies Grid Section -->
-      <div class=" text-black rounded-2xl p-10 my-10 bg-gray-700/55">
+      <div class="  rounded-2xl p-10 my-10 bg-gray-700/55">
         <h2 class="text-3xl font-bold mb-6 text-center">🚜 Government Schemes & Subsidies Related to Agri-Tech</h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div class="bg-gray-800 text-white p-5 rounded-2xl">
