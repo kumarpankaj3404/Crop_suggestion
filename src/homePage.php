@@ -108,41 +108,46 @@ Together, let’s grow more with less and build a greener tomorrow.
                 Discover our range of innovative services designed to empower farmers and promote sustainable agriculture. From personalized crop recommendations to advanced weather predictions and pest management solutions, we provide tools to help you grow smarter and more efficiently.
             </p>
 
-            <div class="flex gap-10 mt-10 ">
-                <a href="./crop_recom.php" class="block">
-                <div class="rounded-2xl border-2 border-gray-900 bg-gray-800 w-80">
-                    <img src="../photos/home/service_crop-recomendation2.jpg" alt="crop" class="h-70 w-80 rounded-2xl">
-                    <h3 class="m-3 text-lg font-bold">
-                        Crop Recomendation
-                    </h3>
-                    <p class="m-3 text-lg  ">
-                        Get personalized crop recommendations based on your soil conditions.
-                    </p>
-                </div>
-                </a>
-                <a href="./weather.php" class="block">
-                <div class="rounded-2xl border-2 border-gray-900 bg-gray-800  w-80">
-                    <img src="../photos/home/service_weather2.jpg" alt="crop" class="h-70 w-80 rounded-2xl">
-                    <h3 class="m-3 text-lg font-bold">
-                        Weather Predictions
-                    </h3>
-                    <p class="m-3 text-lg  ">
-                        Enter the city name and get the weather prediction for the next 15 days.
-                    </p>
-                </div>
-                </a>
-                <a href="./pest.php" class="block">
-                <div class="rounded-2xl border-2 border-gray-900 bg-gray-800 w-80">
-                    <img src="../photos/home/service_pesticidesjpg.jpg" alt="crop" class="h-70 w-80 rounded-2xl">
-                    <h3 class="m-3 text-lg font-bold">
-                        Pest and Disease
-                    </h3>
-                    <p class="m-3 text-lg ">
-                        Explore effective pest and disease management strategies to protect your crops.
-                    </p>
-                </div>
-                </a>
-            </div>
+            <div class="flex gap-10 mt-10">
+    <!-- Crop Recommendation Card -->
+    <a href="./crop_recom.php" class="block">
+        <div class="rounded-2xl border-2 border-gray-900 bg-gray-800 w-80 hover:scale-110 transition-transform duration-300 ease-in-out">
+            <img src="../photos/home/service_crop-recomendation2.jpg" alt="crop" class="h-70 w-80 rounded-t-2xl">
+            <h3 class="m-3 text-lg font-bold">
+                Crop Recommendation
+            </h3>
+            <p class="m-3 text-lg">
+                Get personalized crop recommendations based on your soil conditions.
+            </p>
+        </div>
+    </a>
+
+    <!-- Weather Predictions Card -->
+    <a href="./weather.php" class="block">
+        <div class="rounded-2xl border-2 border-gray-900 bg-gray-800 w-80 hover:scale-110 transition-transform duration-300 ease-in-out">
+            <img src="../photos/home/service_weather2.jpg" alt="weather" class="h-70 w-80 rounded-t-2xl">
+            <h3 class="m-3 text-lg font-bold">
+                Weather Predictions
+            </h3>
+            <p class="m-3 text-lg">
+                Enter the city name and get the weather prediction for the next 15 days.
+            </p>
+        </div>
+    </a>
+
+    <!-- Pest and Disease Card -->
+    <a href="./pest.php" class="block">
+        <div class="rounded-2xl border-2 border-gray-900 bg-gray-800 w-80 hover:scale-110 transition-transform duration-300 ease-in-out">
+            <img src="../photos/home/service_pesticidesjpg.jpg" alt="pest" class="h-70 w-80 rounded-t-2xl">
+            <h3 class="m-3 text-lg font-bold">
+                Pest and Disease
+            </h3>
+            <p class="m-3 text-lg">
+                Explore effective pest and disease management strategies to protect your crops.
+            </p>
+        </div>
+    </a>
+</div>
         </div>
         <!-- <button class="gradient-button bg-lime-400 px-6 py-2 rounded-2xl font-bold mt-10 cursor-pointer">
             View All

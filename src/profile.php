@@ -39,19 +39,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $farm_name = $_POST['farm_name'] ?? '';
     $farm_size = $_POST['farm_size'] ?? '';
     $location = $_POST['location'] ?? '';
-    
+
     // Handle image upload for both new profile and profile update
     $profile_image = null;
     if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
         $profile_image = file_get_contents($_FILES['profile_image']['tmp_name']);
     }
-    
+
     if ($profileData) {
         // Update existing profile
         if ($profile_image !== null) {
             $sql = "UPDATE farmer_profiles SET name=?, farm_name=?, farm_size=?, location=?, profile_image=? WHERE email=?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssdsbs", $name, $farm_name, $farm_size, $location, $profile_image, $email);
+            $stmt->bind_param("ssdsss", $name, $farm_name, $farm_size, $location, $profile_image, $email);
         } else {
             $sql = "UPDATE farmer_profiles SET name=?, farm_name=?, farm_size=?, location=? WHERE email=?";
             $stmt = $conn->prepare($sql);
@@ -66,10 +66,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $sql = "INSERT INTO farmer_profiles (name, email, farm_name, farm_size, location) VALUES (?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssds", $name, $email, $farm_name, $farm_size, $location);
+            $stmt->bind_param("ssdss", $name, $email, $farm_name, $farm_size, $location);
         }
     }
-    
+
     if ($stmt->execute()) {
         $_SESSION['has_profile'] = true;
         header("Location: profile.php");
@@ -338,7 +338,7 @@ function getProfileImage($profileData) {
         function previewImage(input) {
             if (input.files && input.files[0]) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     // Update the preview image
                     const previewImg = document.getElementById('profile-preview');
                     if (previewImg) {
@@ -346,6 +346,12 @@ function getProfileImage($profileData) {
                     }
                 };
                 reader.readAsDataURL(input.files[0]);
+
+                // Automatically submit the form to update the image in the database
+                const form = document.getElementById('profile-image-form');
+                if (form) {
+                    form.submit();
+                }
             }
         }
     </script>
