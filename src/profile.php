@@ -181,7 +181,7 @@ function getProfileImage($profileData) {
                 <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden mb-8">
                     <div class="relative">
                         <!-- Cover Photo -->
-                        <div class="h-40 bg-gradient-to-r from-gray-800 to-gray-900 w-full"></div>
+                        <div class="h-40 bg-[url('../photos/home/back1.jpg')] bg-cover "></div>
                         
                         <!-- Profile Picture and Basic Info -->
                         <div class="flex flex-col md:flex-row items-start px-6 pb-6 -mt-16">
@@ -199,7 +199,7 @@ function getProfileImage($profileData) {
                                 <div class="flex flex-col md:flex-row md:items-end justify-between">
                                     <div>
                                         <h1 class="text-3xl font-bold"><?php echo htmlspecialchars($profileData['name']); ?></h1>
-                                        <p class="text-gray-400"><?php echo htmlspecialchars($profileData['email']); ?></p>
+                                        <p class="text-white"><?php echo htmlspecialchars($profileData['email']); ?></p>
                                     </div>
                                     <div class="mt-3 md:mt-0">
                                         <span class="inline-block bg-lime-500/20 text-lime-400 px-3 py-1 rounded-full text-sm font-medium">Farmer</span>
